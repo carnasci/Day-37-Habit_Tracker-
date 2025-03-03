@@ -20,5 +20,15 @@ headers = {
     "X-USER-TOKEN" : pixela_token,
 }
 
-response = requests.post(url=graph_endpoint, json=graph_config, headers=headers)
+#response = requests.post(url=graph_endpoint, json=graph_config, headers=headers)
+#print(response.text)
+
+add_pixel_endpoint = f"https://pixe.la/v1/users/{username}/graphs/graph1"
+date = "20250303"
+add_pixel_params = {
+    "date" : date,
+    "quantity" : "3.5",
+}
+
+response = requests.post(url=add_pixel_endpoint, json=add_pixel_params, headers=headers)
 print(response.text)
